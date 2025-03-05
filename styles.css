@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Lalezar', cursive;
+  font-weight: 100; /* Adjust the font weight to make it thinner */
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -10,10 +13,65 @@ header {
   padding: 20px;
   text-align: center;
   color: white;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px; /* Rounded corners */
+  margin: 20px; /* Add margin to create floating effect */
 }
 
 header h1 {
   margin: 0;
+}
+
+header .logo {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+}
+
+header .logo.white-logo {
+  filter: brightness(0) invert(1);
+}
+
+header .user-area {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+header .user-area img {
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+header .user-area .cart-popup {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+header .user-area img:hover + .cart-popup,
+header .user-area .cart-popup:hover {
+  display: block;
+}
+
+header .user-area .cart-icon {
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 nav ul {
@@ -44,12 +102,13 @@ main {
 .product-list .product-item {
   background-color: white;
   border: 1px solid #ddd;
-  margin: 10px;
+  margin: 10px 5px; /* Adjust the margins to make them softer */
   padding: 20px;
-  width: calc(30% - 40px);
+  width: calc(30% - 30px); /* Adjust width to account for new margins */
   box-sizing: border-box;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  border-radius: 10px; /* Add rounded corners */
 }
 
 .product-list .product-item:hover {
@@ -66,4 +125,23 @@ footer {
   padding: 10px;
   text-align: center;
   color: white;
+}
+
+/* Custom minimal and beautiful scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6f61;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4f41;
 }
